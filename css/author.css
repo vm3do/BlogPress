@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+input:focus, textarea:focus {
+    outline: solid 2px #2f27ce;
+}
+.dashboard {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 5rem 1rem 2rem;
+    color: #2f27ce;
+}
+
+header .logo {
+    font-weight: bold;
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: #2f27ce;
+}
+
+ul {
+    display: flex;
+    gap: 5rem;
+    list-style: none;
+}
+
+header ul a {
+    background-color: #ce2727;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.stats-container, .articles-container, .create-article-container {
+    display: grid;
+    gap: 20px;
+    margin-top: 20px;
+}
+.stats-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.stats-card {
+    background-color: #2f27ce;
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+.stats-card h3 {
+    margin: 10px 0;
+}
+.chart {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.articles-container {
+    grid-template-columns: 1fr;
+    overflow-x: auto;
+}
+
+/* Make table responsive */
+@media screen and (max-width: 768px) {
+    .articles-container table {
+        display: block;
+    }
+
+    .articles-container table thead {
+        display: none;
+    }
+
+    .articles-container table tbody,
+    .articles-container table tr,
+    .articles-container table td {
+        display: block;
+        width: 100%;
+    }
+
+    .articles-container table tr {
+        margin-bottom: 15px;
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .articles-container table td {
+        text-align: right;
+        padding: 10px;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    .articles-container table td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        width: 45%;
+        text-align: left;
+        font-weight: bold;
+    }
+
+    .articles-container table td:last-child {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        padding-left: 10px;
+    }
+}
+
+.articles-container th, .articles-container td {
+    padding: 15px;
+    text-align: left;
+}
+.articles-container th {
+    background-color: #2f27ce;
+    color: #fff;
+}
+.articles-container tr:nth-child(even) {
+    background-color: #f9f9ff;
+}
+.articles-container button {
+    background-color: #2f27ce;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.articles-container .delete {
+    background-color: #ce2727;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+.articles-container button:hover {
+    background-color: #241fb5;
+}
+.articles-container .delete:hover {
+    background-color: #ba1717;
+}
+.create-article-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.create-article-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.create-article-container input, .create-article-container textarea, .create-article-container button, .create-article-container select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.create-article-container textarea {
+    resize: vertical;
+    height: 100px;
+}
+.create-article-container select {
+    outline: none;
+}
+.create-article-container select:hover {
+    background-color: #2f27ce;
+    color: white;
+}
+
+.create-article-container option {
+    background-color: white;
+    color: #333;
+}
+
+
+.create-article-container button {
+    background-color: #2f27ce;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.create-article-container button:hover {
+    background-color: #241fb5;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 1rem;
+    background: #333;
+    color: #fff;
+}
+
+
+@media (max-width: 768px) {
+    .dashboard-header {
+        flex-direction: column;
+        text-align: center;
+    }
+}
